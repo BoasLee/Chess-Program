@@ -43,10 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Queen.cs" />
+    <Compile Include="Rook Movement.cs" />
+    <Compile Include="Knight Movement.cs" />
+    <Compile Include="King Movement.cs" />
+    <Compile Include="Pawn Movement.cs" />
+    <Compile Include="Bishop Movement.cs" />
+    <Compile Include="Rook.cs" />
+    <Compile Include="King.cs" />
+    <Compile Include="Bishop.cs" />
+    <Compile Include="Knight.cs" />
     <Compile Include="Pawn.cs" />
-    <Compile Include="Pieces.cs" />
+    <Compile Include="ChessPiece.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

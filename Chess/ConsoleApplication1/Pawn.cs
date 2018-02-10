@@ -6,43 +6,37 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class Pawn : Pieces
+    class Pawn : ChessPiece
     {
-        //Constructor
+        // Constructor
         public Pawn(int X, int Y, Color color) : base(X, Y, color)
         {
+            MovementList.Add(new PawnMoveType());
+        }
+        public Pawn() : base()
+        {
+            MovementList.Add(new PawnMoveType());
         }
 
         // Method
-        public override char GetPiecetype()
+        public override ChessPieceType GetPiecetype()
         {
-            return 'p';
+            return ChessPieceType.P;
         }
-        public override bool Move(Pieces[,] Board, int X, int Y)
+        public override bool CheckCapture(ChessPiece[,] Board, int X, int Y)
         {
-            if ((this.Y + 1 == Y && this.X == X && Board[X,Y] == null) || (this.NumberOfMoves== 0 && this.Y + 2 == Y && this.X == X && Board[X, this.Y + 1] == null && Board[X, Y] == null))
+            int Direction, Xdiff;
+            if (this.PieceColor == Color.White)
             {
-                Board[this.X, this.Y] = null;
-                this.Y = Y;
-                Board[X, Y] = this;
-                this.NumberOfMoves++;
-                return true;
+                Direction = 1;
             }
-            return false;
-        }
-        public override bool Capture(Pieces[,] Board, int X, int Y)
-        {
-            if ((this.X + 1 == X || this.X - 1 == X ) && this.Y + 1 == Y && Board[X, Y] != null)
+            else
             {
-                if (this.PieceColor == Board[X, Y].GetColor())
-                {
-                    return false;
-                }
-                Board[this.X, this.Y] = null;
-                Board[X,Y] = this;
-                this.Y = Y;
-                this.X = X;
-                NumberOfMoves++;
+                Direction = -1;
+            }
+            Xdiff = Math.Abs(this.X - X);
+            if (Xdiff == 1 && this.Y + Direction == Y)
+            {
                 return true;
             }
             return false;
