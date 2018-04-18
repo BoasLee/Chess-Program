@@ -43,7 +43,6 @@ namespace ConsoleApplication1
                 {
                     ChangeTurn();
                 }
-                DisplayList(ChessPieceType.P, Color.White);
                 Console.WriteLine();
             }
         }
@@ -271,16 +270,6 @@ namespace ConsoleApplication1
             AddRandomPiece(ChessPieceType.P, 5, 6, Color.Black);
             AddRandomPiece(ChessPieceType.P, 6, 6, Color.Black);
             AddRandomPiece(ChessPieceType.P, 7, 6, Color.Black);
-
-            
-            AddRandomPiece(ChessPieceType.Q, 0, 2, Color.Black);
-            AddRandomPiece(ChessPieceType.Q, 1, 2, Color.Black);
-            AddRandomPiece(ChessPieceType.Q, 2, 2, Color.Black);
-            AddRandomPiece(ChessPieceType.Q, 3, 2, Color.Black);
-            AddRandomPiece(ChessPieceType.Q, 4, 2, Color.Black);
-            AddRandomPiece(ChessPieceType.Q, 5, 2, Color.Black);
-            AddRandomPiece(ChessPieceType.Q, 6, 2, Color.Black);
-            AddRandomPiece(ChessPieceType.Q, 7, 2, Color.Black);
         }
         private static void ClearPieces()
         {
@@ -299,9 +288,9 @@ namespace ConsoleApplication1
         }
         private static void AddLists() //Adding lists to dictionary. 
         {            
-        	List<ChessPiece> mypointer = new List<ChessPiece>();
+        	//List<ChessPiece> mypointer = new List<ChessPiece>();
         	
-        	WhitePieces.Add(ChessPieceType.K, mypointer);
+        	//WhitePieces.Add(ChessPieceType.K, mypointer);
         	
             WhitePieces.Add(ChessPieceType.R, new List<ChessPiece>());
             WhitePieces.Add(ChessPieceType.K, new List<ChessPiece>());
@@ -309,6 +298,8 @@ namespace ConsoleApplication1
             WhitePieces.Add(ChessPieceType.B, new List<ChessPiece>());
             WhitePieces.Add(ChessPieceType.Q, new List<ChessPiece>());
             WhitePieces.Add(ChessPieceType.P, new List<ChessPiece>());
+
+
             BlackPieces.Add(ChessPieceType.R, new List<ChessPiece>());
             BlackPieces.Add(ChessPieceType.K, new List<ChessPiece>());
             BlackPieces.Add(ChessPieceType.N, new List<ChessPiece>());
