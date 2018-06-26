@@ -1,2 +1,2 @@
 # chess-program
-Play a chess game.
+Chess game.
